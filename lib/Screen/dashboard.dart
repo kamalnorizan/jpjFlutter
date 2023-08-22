@@ -5,12 +5,12 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: const Text('Dashboard'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Container(
         width: double.maxFinite,
-        padding: EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -18,10 +18,32 @@ class Dashboard extends StatelessWidget {
             Container(
               width: double.maxFinite,
               height: 120,
-              child: Card(
+              child: const Card(
                 color: Colors.white,
                 elevation: 8,
-                child: Text('Hello World'),
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Total Views'),
+                            Text(
+                              '290',
+                              style: TextStyle(
+                                fontSize: 50,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.auto_graph, size: 80),
+                    ],
+                  ),
+                ),
               ),
             )
           ],
