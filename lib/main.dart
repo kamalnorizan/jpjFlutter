@@ -1,3 +1,4 @@
+import 'package:dashboard/Screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 import 'Screen/home.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: Home(),
+      home: Dashboard(),
     );
   }
 }
