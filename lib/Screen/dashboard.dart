@@ -42,60 +42,60 @@ class Dashboard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Expanded(
-                    child: Card(
-                      elevation: 8,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(Icons.get_app, size: 80,),
-                            Text(
-                              'Downloads',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                              ),
-                            ),
-                            Text(
-                              'Images, Videos',
-
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                  SmallStat(
+                    title: 'Downloads',
+                    subtitle: 'Images, Videos',
+                    iconSet: Icons.download,
                   ),
                   SizedBox(
                     width: 10,
                   ),
-                  Expanded(
-                    child: Card(
-                      elevation: 8,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(Icons.get_app, size: 80,),
-                            Text(
-                              'Downloads',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                              ),
-                            ),
-                            Text(
-                              'Images, Videos',
-
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                  SmallStat(
+                    title: 'Notifications',
+                    subtitle: 'All',
+                    iconSet: Icons.notifications_active,
                   ),
                 ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SmallStat extends StatelessWidget {
+  String title;
+  String subtitle;
+  IconData iconSet;
+  SmallStat({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.iconSet,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Card(
+        elevation: 8,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(iconSet, size: 80,),
+              Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
+              ),
+              Text(
+                subtitle,
               )
             ],
           ),
