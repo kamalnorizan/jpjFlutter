@@ -8,35 +8,97 @@ class Dashboard extends StatelessWidget {
         title: const Text('Dashboard'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Container(
-        width: double.maxFinite,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CardWithIcon(
-              title: 'Total Views',
-              value: '265',
-              cardIcon: Icons.remove_red_eye,
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            CardWithIcon(
-              title: 'Total Visitors',
-              value: '1056',
-              cardIcon: Icons.supervised_user_circle_sharp,
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            CardWithIcon(
-              title: 'Customers',
-              value: '730',
-              cardIcon: Icons.shop,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.maxFinite,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CardWithIcon(
+                title: 'Total Views',
+                value: '265',
+                cardIcon: Icons.remove_red_eye,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              CardWithIcon(
+                title: 'Total Visitors',
+                value: '1056',
+                cardIcon: Icons.supervised_user_circle_sharp,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              CardWithIcon(
+                title: 'Customers',
+                value: '730',
+                cardIcon: Icons.shop,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Card(
+                      elevation: 8,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(Icons.get_app, size: 80,),
+                            Text(
+                              'Downloads',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              'Images, Videos',
+
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: Card(
+                      elevation: 8,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(Icons.get_app, size: 80,),
+                            Text(
+                              'Downloads',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              'Images, Videos',
+
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -51,8 +113,8 @@ class CardWithIcon extends StatelessWidget {
   CardWithIcon(
       {super.key,
       required this.title,
-        required this.value,
-        required this.cardIcon});
+      required this.value,
+      required this.cardIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +123,7 @@ class CardWithIcon extends StatelessWidget {
       height: 120,
       child: Card(
         color: Colors.white,
-        elevation: 8,
+        elevation: 10,
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Row(
