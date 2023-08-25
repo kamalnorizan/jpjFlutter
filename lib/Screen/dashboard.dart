@@ -8,6 +8,24 @@ class Dashboard extends StatelessWidget {
         title: const Text('Dashboard'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Image.asset('assets/JPJ_logo_0.png'),
+            ),
+            const ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              subtitle: Text('Dashboard'),
+              trailing: Icon(Icons.home),
+            )
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: double.maxFinite,
@@ -69,6 +87,7 @@ class SmallStat extends StatelessWidget {
   String title;
   String subtitle;
   IconData iconSet;
+
   SmallStat({
     super.key,
     required this.title,
@@ -86,7 +105,10 @@ class SmallStat extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(iconSet, size: 80,),
+              Icon(
+                iconSet,
+                size: 80,
+              ),
               Text(
                 title,
                 style: const TextStyle(
