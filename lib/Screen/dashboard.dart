@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
                 value: '265',
                 cardIcon: Icons.remove_red_eye,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               CardWithIcon(
@@ -29,7 +29,7 @@ class Dashboard extends StatelessWidget {
                 value: '1056',
                 cardIcon: Icons.supervised_user_circle_sharp,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               CardWithIcon(
@@ -37,7 +37,7 @@ class Dashboard extends StatelessWidget {
                 value: '730',
                 cardIcon: Icons.shop,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -47,7 +47,7 @@ class Dashboard extends StatelessWidget {
                     subtitle: 'Images, Videos',
                     iconSet: Icons.download,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   SmallStat(
@@ -89,7 +89,7 @@ class SmallStat extends StatelessWidget {
               Icon(iconSet, size: 80,),
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
                 ),
@@ -125,7 +125,7 @@ class CardWithIcon extends StatelessWidget {
         color: Colors.white,
         elevation: 10,
         child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Row(
             children: [
               Expanded(
@@ -136,7 +136,7 @@ class CardWithIcon extends StatelessWidget {
                     Text(title),
                     Text(
                       value,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 50,
                       ),
                     ),
