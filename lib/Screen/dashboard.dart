@@ -1,4 +1,8 @@
+import 'package:dashboard/Screen/formScreen.dart';
 import 'package:flutter/material.dart';
+
+import '../Widgets/customDrawer.dart';
+import 'listViewScreen.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -8,61 +12,7 @@ class Dashboard extends StatelessWidget {
         title: const Text('Dashboard'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              // child: Image.asset('assets/JPJ_logo_0.png'),
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 50,
-                    child: Icon(
-                      Icons.account_circle,
-                      size: 80,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  Text(
-                    'Ahmad Kamal',
-                    style: TextStyle(fontSize: 20),
-                  )
-                ],
-              ),
-            ),
-            const ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-              subtitle: Text('Dashboard'),
-              // trailing: Icon(Icons.home),
-            ),
-            const ListTile(
-              leading: Icon(Icons.edit),
-              title: Text('Form'),
-              subtitle: Text('Registration Form'),
-              // trailing: Icon(Icons.edit),
-            ),
-            const ListTile(
-              leading: Icon(Icons.list_alt),
-              title: Text('List View'),
-              subtitle: Text('Widget'),
-              // trailing: Icon(Icons.list),
-            ),
-            Divider(),
-            const ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
-              subtitle: Text('Widget'),
-              // trailing: Icon(Icons.list),
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Container(
           width: double.maxFinite,
@@ -119,6 +69,8 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
+
+
 
 class SmallStat extends StatelessWidget {
   String title;
